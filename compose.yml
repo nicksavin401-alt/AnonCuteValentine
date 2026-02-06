@@ -1,0 +1,14 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - /opt/anonimki-bot/.env
+    volumes:
+      - /opt/anonimki-data:/app/data
+    depends_on:
+      - redis
