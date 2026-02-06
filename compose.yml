@@ -7,7 +7,7 @@ services:
     build: .
     restart: unless-stopped
     env_file:
-      - /opt/AnonCuteValentine/.env
+      - /opt/AnonCuteValentine-bot/.env
     volumes:
       - /opt/AnonCuteValentine-data:/app/data
     depends_on:
