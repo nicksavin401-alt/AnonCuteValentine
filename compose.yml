@@ -7,8 +7,8 @@ services:
     build: .
     restart: unless-stopped
     env_file:
-      - /opt/anonimki-bot/.env
+      - /opt/AnonCuteValentine-bot/.env
     volumes:
-      - /opt/anonimki-data:/app/data
+      - /opt/AnonCuteValentine-data:/app/data
     depends_on:
       - redis
