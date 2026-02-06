@@ -8,7 +8,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 logger = logging.getLogger(__name__)
 
 engine = create_async_engine(
-    url="sqlite+aiosqlite:///db.sqlite3", #///db.sqlite3 для локальной разработки
+    url="sqlite+aiosqlite:////app/data/db.sqlite3", #///db.sqlite3 для локальной разработки
     echo=True,
 )
 
