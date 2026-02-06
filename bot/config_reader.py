@@ -7,6 +7,8 @@ class Settings(BaseSettings):
 
     bot_token: SecretStr
     redis_ip: SecretStr
+    admin_chat_id: int
+
     model_config = SettingsConfigDict(env_file="bot/.env", env_file_encoding="utf-8")
 
 

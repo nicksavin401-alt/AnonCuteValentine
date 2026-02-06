@@ -54,11 +54,7 @@ def my_link_short(link: str) -> str:
 
 # Получатель: входящие сообщения
 def incoming_text(text: str) -> str:
-    return (
-        "💝 <b>Тебе пришла валентинка</b>\n"
-        "━━━━━━━━━━━━━━\n\n"
-        f"{text}"
-    )
+    return f"💝 <b>Тебе пришла валентинка</b>\n━━━━━━━━━━━━━━\n\n{text}"
 
 
 def incoming_photo(caption: str = "") -> str:
@@ -126,65 +122,41 @@ def incoming_sticker() -> str:
 
 # Получатель: ответы
 def reply_text(text: str) -> str:
-    return (
-        "💞 <b>Тебе ответили на валентинку</b>\n"
-        "━━━━━━━━━━━━━━\n\n"
-        f"{text}"
-    )
+    return f"💞 <b>Тебе ответили на валентинку</b>\n━━━━━━━━━━━━━━\n\n{text}"
 
 
 def reply_photo(caption: str = "") -> str:
     caption = (caption or "").strip()
     if caption:
-        return (
-            "💞 <b>Тебе ответили картинкой</b>\n"
-            "━━━━━━━━━━━━━━\n\n"
-            f"<i>{caption}</i>"
-        )
+        return f"💞 <b>Тебе ответили картинкой</b>\n━━━━━━━━━━━━━━\n\n<i>{caption}</i>"
     return "💞 <b>Тебе ответили картинкой</b>."
 
 
 def reply_video(caption: str = "") -> str:
     caption = (caption or "").strip()
     if caption:
-        return (
-            "💞 <b>Тебе ответили видео</b>\n"
-            "━━━━━━━━━━━━━━\n\n"
-            f"<i>{caption}</i>"
-        )
+        return f"💞 <b>Тебе ответили видео</b>\n━━━━━━━━━━━━━━\n\n<i>{caption}</i>"
     return "💞 <b>Тебе ответили видео</b>."
 
 
 def reply_animation(caption: str = "") -> str:
     caption = (caption or "").strip()
     if caption:
-        return (
-            "💞 <b>Тебе ответили GIF</b>\n"
-            "━━━━━━━━━━━━━━\n\n"
-            f"<i>{caption}</i>"
-        )
+        return f"💞 <b>Тебе ответили GIF</b>\n━━━━━━━━━━━━━━\n\n<i>{caption}</i>"
     return "💞 <b>Тебе ответили GIF</b>."
 
 
 def reply_document(caption: str = "") -> str:
     caption = (caption or "").strip()
     if caption:
-        return (
-            "💞 <b>Тебе ответили файлом</b>\n"
-            "━━━━━━━━━━━━━━\n\n"
-            f"<i>{caption}</i>"
-        )
+        return f"💞 <b>Тебе ответили файлом</b>\n━━━━━━━━━━━━━━\n\n<i>{caption}</i>"
     return "💞 <b>Тебе ответили файлом</b>."
 
 
 def reply_voice(caption: str = "") -> str:
     caption = (caption or "").strip()
     if caption:
-        return (
-            "💞 <b>Тебе ответили голосовым</b>\n"
-            "━━━━━━━━━━━━━━\n\n"
-            f"<i>{caption}</i>"
-        )
+        return f"💞 <b>Тебе ответили голосовым</b>\n━━━━━━━━━━━━━━\n\n<i>{caption}</i>"
     return "💞 <b>Тебе ответили голосовым</b>."
 
 
@@ -241,4 +213,3 @@ DONATE_THANKS = "Спасибо за поддержку! ❤️⭐️ <i>Это 
 # Кнопки
 BTN_BLOCK = "🚫 Заблокировать"
 BTN_RESPOND = "💬 Ответить"
-

@@ -1,3 +1,4 @@
+from logging import config
 from aiogram import Router, Bot
 from aiogram.types import Message
 from aiogram.utils.deep_linking import create_start_link, decode_payload
@@ -9,6 +10,9 @@ import states as states
 import keyboards as keyboards
 import database.requests as requests
 import texts as t
+
+ADMIN_CHAT_ID = config.admin_chat_id
+
 
 main_router = Router()
 
@@ -261,10 +265,7 @@ async def send_reply_message(message: Message, state: FSMContext, bot: Bot):
             reply_to_message_id=reply_to_message_id,
             reply_markup=answer_button,
         )
-        await bot.send_message(
-            chat_id=receiver_tg_id,
-            text=t.reply_video_note()
-        )
+        await bot.send_message(chat_id=receiver_tg_id, text=t.reply_video_note())
         await message.answer(t.REPLY_SENT_OK)
         await state.clear()
         return
@@ -273,7 +274,7 @@ async def send_reply_message(message: Message, state: FSMContext, bot: Bot):
         await bot.send_sticker(
             chat_id=receiver_tg_id,
             sticker=message.sticker.file_id,
-            reply_to_message_id=reply_to_message_id,            
+            reply_to_message_id=reply_to_message_id,
             reply_markup=answer_button,
         )
         await bot.send_message(
