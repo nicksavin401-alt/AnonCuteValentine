@@ -1,10 +1,11 @@
-from logging import config
 from aiogram import Router, Bot
 from aiogram.types import Message
 from aiogram.utils.deep_linking import create_start_link, decode_payload
 from aiogram.filters import CommandStart, Command, CommandObject, StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.exceptions import TelegramBadRequest
+
+from config_reader import config
 
 import states as states
 import keyboards as keyboards
